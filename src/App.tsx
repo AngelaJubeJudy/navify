@@ -11,27 +11,32 @@ import News from './pages/News';
 import DailyTools from './pages/DailyTools';
 import NewLinks from './pages/NewLinks';
 import Trending from './pages/Trending';
+import NotFound from './pages/NotFound';
+import ErrorBoundary from './components/ErrorBoundary';
 
 function App() {
   return (
     <ThemeProvider>
       <LanguageProvider>
-        <Router>
-          <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-slate-800 transition-colors">
-            <Layout>
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/requests" element={<Requests />} />
-                <Route path="/templates" element={<Templates />} />
-                <Route path="/build-your-nav" element={<BuildYourNav />} />
-                <Route path="/news" element={<News />} />
-                <Route path="/daily-tools" element={<DailyTools />} />
-                <Route path="/new-links" element={<NewLinks />} />
-                <Route path="/trending" element={<Trending />} />
-              </Routes>
-            </Layout>
-          </div>
-        </Router>
+        <ErrorBoundary>
+          <Router>
+            <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-slate-800 transition-colors">
+              <Layout>
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/requests" element={<Requests />} />
+                  <Route path="/templates" element={<Templates />} />
+                  <Route path="/build-your-nav" element={<BuildYourNav />} />
+                  <Route path="/news" element={<News />} />
+                  <Route path="/daily-tools" element={<DailyTools />} />
+                  <Route path="/new-links" element={<NewLinks />} />
+                  <Route path="/trending" element={<Trending />} />
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
+              </Layout>
+            </div>
+          </Router>
+        </ErrorBoundary>
       </LanguageProvider>
     </ThemeProvider>
   );

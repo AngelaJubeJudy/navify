@@ -8,7 +8,7 @@ interface LanguageContextType {
   t: (key: string) => string;
 }
 
-const translations = {
+const translations: { [lang in Language]: { [key: string]: string } } = {
   en: {
     // Navigation
     'nav.home': 'Home',
@@ -74,7 +74,23 @@ const translations = {
     'footer.description': 'Your ultimate destination for organized bookmarks, website templates, tools, and daily recommendations. Discover, organize, and navigate the web efficiently.',
     'footer.content': 'Content',
     'footer.rankings': 'Rankings',
-    'footer.copyright': '© 2025 Navify.lol. All rights reserved. Built for quick bookmarks navigation.'
+    'footer.copyright': '© 2025 Navify.lol. All rights reserved. Built for quick bookmarks navigation.',
+    
+    // 404
+    'notFound.title': 'Page Not Found',
+    'notFound.desc': 'Sorry, the page you are looking for does not exist or has been moved.',
+    'notFound.backHome': 'Back to Home',
+    
+    // 5xx Error Pages
+    'error5xx.500.message': 'The server encountered a problem. Please try again later.',
+    'error5xx.500.humor': 'Our server is on strike and having a coffee break ☕️',
+    'error5xx.502.message': 'Bad gateway. Please try again later.',
+    'error5xx.502.humor': 'The gateway is taking a nap and dreaming in circles 💤',
+    'error5xx.503.message': 'Service is under maintenance. Please visit again later.',
+    'error5xx.503.humor': 'Our engineer is fixing things up. Be right back! 🔧',
+    'error5xx.503.maintain': 'We are working hard to fix this. Please try again soon…',
+    'error5xx.reload': 'Reload Page',
+    'error5xx.feedback': 'Report Issue'
   },
   es: {
     // Navigation
@@ -141,7 +157,23 @@ const translations = {
     'footer.description': 'Tu destino definitivo para marcadores organizados, plantillas de sitios web, herramientas y recomendaciones diarias. Descubre, organiza y navega por la web de manera eficiente.',
     'footer.content': 'Contenido',
     'footer.rankings': 'Rankings',
-    'footer.copyright': '© 2025 Navify.lol. Todos los derechos reservados. Construido para navegación rápida de marcadores.'
+    'footer.copyright': '© 2025 Navify.lol. Todos los derechos reservados. Construido para navegación rápida de marcadores.',
+    
+    // 404
+    'notFound.title': 'Página no encontrada',
+    'notFound.desc': 'Lo sentimos, la página que buscas no existe o ha sido movida.',
+    'notFound.backHome': 'Volver al inicio',
+    
+    // 5xx Error Pages
+    'error5xx.500.message': 'The server encountered a problem. Please try again later.',
+    'error5xx.500.humor': 'Our server is on strike and having a coffee break ☕️',
+    'error5xx.502.message': 'Bad gateway. Please try again later.',
+    'error5xx.502.humor': 'The gateway is taking a nap and dreaming in circles 💤',
+    'error5xx.503.message': 'Service is under maintenance. Please visit again later.',
+    'error5xx.503.humor': 'Our engineer is fixing things up. Be right back! 🔧',
+    'error5xx.503.maintain': 'We are working hard to fix this. Please try again soon…',
+    'error5xx.reload': 'Reload Page',
+    'error5xx.feedback': 'Report Issue'
   },
   zh: {
     // Navigation
@@ -208,7 +240,23 @@ const translations = {
     'footer.description': '您的终极目的地，用于组织书签、网站模板、工具和每日推荐。高效地发现、组织和浏览网络。',
     'footer.content': '内容',
     'footer.rankings': '排名',
-    'footer.copyright': '© 2025 Navify.lol. 保留所有权利。专为快速书签导航而构建。'
+    'footer.copyright': '© 2025 Navify.lol. 保留所有权利。专为快速书签导航而构建。',
+    
+    // 404
+    'notFound.title': '页面未找到',
+    'notFound.desc': '抱歉，您访问的页面不存在或已被移动。',
+    'notFound.backHome': '返回首页',
+    
+    // 5xx Error Pages
+    'error5xx.500.message': '服务器出了点问题，请稍后再试。',
+    'error5xx.500.humor': '服务器罢工了，正让它喝杯咖啡恢复下精神 ☕️',
+    'error5xx.502.message': '网关错误，请稍后重试。',
+    'error5xx.502.humor': '网关打了个盹，梦里还在转圈圈 💤',
+    'error5xx.503.message': '服务维护中，请稍后访问。',
+    'error5xx.503.humor': '服务员正在紧急维修，马上回来！🔧',
+    'error5xx.503.maintain': '我们正在紧急修复中，请稍后再试…',
+    'error5xx.reload': '刷新页面',
+    'error5xx.feedback': '反馈问题'
   }
 };
 

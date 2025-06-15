@@ -2,9 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Bookmark, Star, TrendingUp, Zap, Shield, Clock, Users } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import Error5xx from './Error5xx';
 
 const Home: React.FC = () => {
   const { t } = useLanguage();
+  const [errorCode, setErrorCode] = React.useState<number | null>(null);
 
   const features = [
     {
@@ -69,6 +71,17 @@ const Home: React.FC = () => {
       icon: '🚀',
     },
   ];
+
+  // 示例：模拟接口请求
+  React.useEffect(() => {
+    // 假设fetch('/api/some')
+    // 这里只做演示，实际可根据接口返回动态设置
+    // setErrorCode(500); // 或502/503
+  }, []);
+
+  if (errorCode) {
+    return <Error5xx code={errorCode} />;
+  }
 
   return (
     <div className="space-y-20">
