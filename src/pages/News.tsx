@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Calendar, Clock, ExternalLink, TrendingUp, User, Tag, Search, Filter } from 'lucide-react';
+import { Calendar, Clock, ExternalLink, TrendingUp, User, Tag, Search } from 'lucide-react';
+import { appendUtmSource } from '../utils/url';
 
 const News: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -199,7 +200,7 @@ const News: React.FC = () => {
                 <h2 className={`font-bold text-slate-900 mb-3 hover:text-blue-600 transition-colors ${
                   index === 0 ? 'text-xl' : 'text-lg'
                 }`}>
-                  <a href={item.url}>{item.title}</a>
+                  <a href={appendUtmSource(item.url)}>{item.title}</a>
                 </h2>
                 
                 <p className="text-slate-600 mb-4 line-clamp-2">{item.excerpt}</p>
@@ -233,7 +234,7 @@ const News: React.FC = () => {
                   </div>
                   
                   <a
-                    href={item.url}
+                    href={appendUtmSource(item.url)}
                     className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium"
                   >
                     Read More

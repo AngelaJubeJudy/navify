@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Plus, Clock, ExternalLink, User, Tag, Heart, Eye, TrendingUp, Calendar } from 'lucide-react';
+import { Plus, Clock, ExternalLink, User, Tag, Heart, Eye, TrendingUp } from 'lucide-react';
+import { appendUtmSource } from '../utils/url';
 
 const NewLinks: React.FC = () => {
   const [timeFilter, setTimeFilter] = useState('today');
@@ -252,7 +253,7 @@ const NewLinks: React.FC = () => {
                   </div>
                   
                   <h2 className="text-xl font-bold text-slate-900 mb-2 hover:text-blue-600 transition-colors">
-                    <a href={link.url} target="_blank" rel="noopener noreferrer">
+                    <a href={appendUtmSource(link.url)} target="_blank" rel="noopener noreferrer">
                       {link.title}
                     </a>
                   </h2>
@@ -273,7 +274,7 @@ const NewLinks: React.FC = () => {
                 </div>
                 
                 <a
-                  href={link.url}
+                  href={appendUtmSource(link.url)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="ml-4 inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all flex-shrink-0"

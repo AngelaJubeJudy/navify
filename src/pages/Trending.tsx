@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { TrendingUp, Siren as Fire, ExternalLink, Heart, Eye, MessageSquare, Calendar, User, Star, Award } from 'lucide-react';
+import { appendUtmSource } from '../utils/url';
 
 const Trending: React.FC = () => {
   const [timeRange, setTimeRange] = useState('week');
@@ -283,7 +284,7 @@ const Trending: React.FC = () => {
                     </div>
 
                     <h2 className="text-xl font-bold text-slate-900 mb-2 hover:text-blue-600 transition-colors cursor-pointer">
-                      <a href={item.url} target="_blank" rel="noopener noreferrer">
+                      <a href={appendUtmSource(item.url)} target="_blank" rel="noopener noreferrer">
                         {item.title}
                       </a>
                     </h2>
@@ -314,7 +315,7 @@ const Trending: React.FC = () => {
                       </div>
 
                       <a
-                        href={item.url}
+                        href={appendUtmSource(item.url)}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all"
